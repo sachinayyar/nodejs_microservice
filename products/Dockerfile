@@ -1,13 +1,3 @@
-FROM node
+FROM registry.access.redhat.com/ubi8/openjdk-11
 
-WORKDIR /app/products
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 8002
-
-CMD ["npm", "start"]
+COPY target/SpringbootOpenshitMysqlDemo-0.0.1-SNAPSHOT.jar /deployments/
